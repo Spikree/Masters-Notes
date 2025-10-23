@@ -27,5 +27,14 @@ Each notification type has its own class and behavior. You will use the Factory 
 
 ## Reflective Questions
 1. How does the simple and standard factory patterns differ? What version is implimented here, and why?
+    The simple factory centralizes object creation in one method, deciding which subclass to instantiate based on input.
+    The factory method lets the subclass decide which class to instantiate, promoting extensibility.
+    If creation logic is fixed inside one class, its a simple factory and if subclasses override creation its a factory method.
+    The Factory Method pattern standard factory is implemented here because object creation is delegated to subclasses (EmailFactory, SMSFactory, PushFactory) that each decide which Notification to instantiate.
+
 2. What are the benefits of using an abstract product class in this pattern?
+    Using an abstract product class like Notification lets all concrete products share a common interface enabling polymorphism.
+
+
 3. How would you extend this system to support new notification types (a Pager for example) without modifying existing code?
+    To add a new notification type like pager, create a new pager notification class implementing notification and a pageFactory extending notifacationFactory.

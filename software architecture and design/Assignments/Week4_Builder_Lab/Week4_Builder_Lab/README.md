@@ -28,5 +28,19 @@ You will implement a `PizzaBuilder` that allows building a `Pizza` object with o
 
 ## Reflective Questions
 1. Why is the Builder pattern more appropriate here than using a constructor with many parameters?
+ - Because a constructor with many paramaters is very unreadable and really difficult to maintain
+ - Constructors are great when the class has few paramaters
+ - But when the paramaters increase and we have a lot of optional paramaters the code gets very complex and less readable if we don't use Builder pattern
+ - We don't have to memorise the order or the meaning of paramater
+
 2. How does method chaining of the fluent builder improve readability and maintainability?
+- Readability
+    When we use method chaining each method or line defines the attribute of the function/action it is going to perform 
+    We don't have to memorise the order or the meaning of the paramater
+
+- Maintainability
+    Suppose we want to add more features to the pizza builder lets say setSize("large") we don't need to modify existing constructor calls or rewrite the code old code still works and new methods can be added easily, every method is modular and self contained
+
 3. How would you extend this builder to support validation (e.g., no cheese on vegan pizzas)?
+- I would add a boolean for vegan pizza or for no cheese and update the builder method to have setVegan or setNoCheese and also add these in the pizza builder interface
+- I will also add a validation for when the pizza is set to be vegan or with no cheese and in the main client we have addPepperoni method or the addCheese method it throws an exception 

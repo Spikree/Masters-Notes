@@ -23,8 +23,19 @@ You will implement a `Logger` class that follows the Singleton pattern. This log
 
 ## Reflective Questions
 1. What are the benefits and drawbacks of using the Singleton pattern?
+   Benifits:
+   Ensures a single, globally accessible instance, conserving resources and maintaining consistent state.
+   Drawbacks:
+   Makes testing harder, hides dependencies, and can lead to tight coupling or unintended shared state
+   
+
 2. How would you make your Singleton implementation thread-safe?
+   use a static initializer or an enum-based Singleton, which are inherently thread-safe in Java.
+
 3. In what scenarios should Singleton be avoided, and why?
+   Singletons should be avoided when classes need to be easily testable or replaced, as they make mocking difficult.
+   They’re also problematic in multithreaded or large systems where shared state can cause unexpected behavior.
+   Overuse can lead to tight coupling and effectively turn the Singleton into a hidden global variable.
 
 ## Deliverables
 1. Your completed code submissions
