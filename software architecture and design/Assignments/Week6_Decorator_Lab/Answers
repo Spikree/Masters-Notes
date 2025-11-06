@@ -1,0 +1,15 @@
+1. What advantages does the Decorator Pattern offer over subclassing?
+- We can add functionality to the the existing classes without modifying them
+- We dont risk breaking of the existing classes
+- We can combine multiple decorator classes in a flexible way
+- We can add any features as we please and it doesent get cluttered by passing in arguments while object creation
+
+2. What challenges might arise when stacking multiple decorators?
+- If we have a lot of decorators it can make debugging and tracing errors difficult or make understanding the flow harder
+- The more decorators we have the more combinations exist and they need to be tested and we have to write more tests,
+ suppose we cant add two decorators together we gotta have one or the other ( invalid combination ), but if we have a lot of decorators we have to write more tests
+
+3. Could this pattern be used for input validation or logging? Why or why not?
+- Yes we can use the decorator pattern for logging and validation
+- we can create a decorator that wraps around a component and checks the input before passing it further and if the input is invalid or empty we can throw an error
+- similarly we can use the decorator pattern that logs method calls or the arguments we passed or any other data
